@@ -12,12 +12,11 @@ export class S3BucketStack extends cdk.Stack {
     super(scope, id, props)
 
     // Create an S3 bucket without a name so that if a rollback is required the bucket can also be deleted
-    // by the cloudformation service. Otherwise you will eventually use up your buckets. We will use 
+    // by the cloudformation service. Other wise you will eventually use up your buckets. We will use
     // "termination protection" to prevent it from being accidently deleted. Using tags will let us have a more human
-    // readable "name", but still give us the ability to allow cloudformation to delete.
+    // read-able "name", but still give us the ability to allow cloudformation to delete.
 
     const s3Bucket = new s3.Bucket(this, `${props.stage}-Bucket`, {})
-
 
     }
 };

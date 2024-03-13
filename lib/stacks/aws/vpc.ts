@@ -13,7 +13,7 @@ export class VPCStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props: VPCStackProps) {
     super(scope, id, props)
 
-    // This creates a standard VPC stack
+    // This creates a standard VPC, nothin' special
     this.vpc = new ec2.Vpc(this, `${props.stage}-VPC`)
 
     }
